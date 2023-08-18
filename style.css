@@ -714,7 +714,11 @@ h1 em {
   background-color: #b80000;
 }
 
-
+.countdown {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 0px;
+}
 
 
 
