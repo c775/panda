@@ -799,3 +799,40 @@ a {
     }
 }
 
+/*more css for index des*/
+.event-description {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+.event-description h2 {
+    color: #009879;  /* Feel free to change the color */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.event-description h3 {
+    color: #333;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.event-description p {
+    color: #555;
+    font-size: 16px;
+}
+
+.event-description ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.event-description li {
+    margin-bottom: 10px;
+}
+
+.event-description strong {
+    color: #333;
+}
