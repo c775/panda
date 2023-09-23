@@ -801,7 +801,7 @@ a {
 /*index html*/
 .event-description {
     font-family: 'Arial', sans-serif;
-    max-width: 800px;
+    max-width: 400px;
     margin: 20px auto;
     line-height: 1.6;
 }
