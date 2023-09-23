@@ -847,12 +847,12 @@ a {
     color: #333;
 }
 
-/* Media query for smaller screens */
+/* Media query for smaller screens 
 @media (max-width: 725px) {
     .agenda {
-        flex-direction: column; /* Stacks children vertically */
+        flex-direction: column; /* Stacks children vertically 
     }
-
+*/
     .agenda-item {
         margin: 10px 0;
         width: 100%; /* Takes full width of the container */
