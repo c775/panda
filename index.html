@@ -8,6 +8,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+	<style>
+        .day {
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .day:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
 
@@ -86,8 +102,12 @@
 		<div class="event-description">
 	      <h2><center>SWTX TV Summit Zone Meeting</center></h2>
 <p><center>SWTX is honored to host the TV Summit Zone Meeting in the beautiful Alamo City, San Antonio, Texas! We embarked on a journey where we trained our mindset with <strong>"In it to Win it"</strong>, strengthened our toolset with <strong>"Level UP!"</strong> Now, we're ready to complete the cycle and apply the skillset, getting <strong>DIALED IN!</strong> Experience unity and a blend of cultures in the heart of San Antonio.</center></p>
-<p><center>SWTX is honored to host the TV Summit Zone Meeting in the beautiful Alamo City, San Antonio, Texas! We embarked on a journey where we trained our mindset with <strong>"In it to Win it"</strong>, strengthened our toolset with <strong>"Level UP!"</strong> Now, we're ready to complete the cycle and apply the skillset, getting <strong>DIALED IN!</strong> Experience unity and a blend of cultures in the heart of San Antonio.</center></p>
 
+<div class="day" onmouseover="displayWeather(1)" onmouseout="hideWeather()">Day 1</div>
+    <div class="day" onmouseover="displayWeather(2)" onmouseout="hideWeather()">Day 2</div>
+    <div class="day" onmouseover="displayWeather(3)" onmouseout="hideWeather()">Day 3</div>
+
+    <div id="weather-details" style="display:none; text-align: center;"></div>
 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <div class="elfsight-app-c0347040-45af-4ba6-967b-55e3dcd81115"></div>
     
@@ -96,27 +116,46 @@
 		<p class="countdown" id="cdtimer"></p>
 
 		<script>
-		var countDownDate = new Date("Sep 25, 2023 09:30:00").getTime();
+        function displayWeather(day) {
+            // Use a weather API to fetch and display weather information for the selected day
+            // For simplicity, let's assume we have a function getWeather(day) that returns the data
+            const weatherData = getWeather(day);
+            const weatherDetails = document.getElementById('weather-details');
+            weatherDetails.innerHTML = `<strong>Day ${day}:</strong><br>Temperature: ${weatherData.temperature}°C<br>Conditions: ${weatherData.conditions}`;
+            weatherDetails.style.display = 'block';
+        }
 
-		var x = setInterval(function() {
+        function hideWeather() {
+            const weatherDetails = document.getElementById('weather-details');
+            weatherDetails.style.display = 'none';
+        }
 
-		  var now = new Date().getTime();
-
-		  var distance = countDownDate - now;
-
-		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-		  
-		  document.getElementById("demo").innerHTML = days + " Days<br>" + hours + " Hours<br>"
-		  + minutes + " Minutes ";
-		    
-		  if (distance < 0) {
-		    clearInterval(x);
-		    document.getElementById("demo").innerHTML = "EXPIRED";
-		  }
-		}, 1000);
-		</script>	
+        // Mock function for demonstration purposes
+        function getWeather(day) {
+            switch (day) {
+                case 1:
+                    return {
+                        temperature: 25,
+                        conditions: "Sunny"
+                    };
+                case 2:
+                    return {
+                        temperature: 22,
+                        conditions: "Partly Cloudy"
+                    };
+                case 3:
+                    return {
+                        temperature: 20,
+                        conditions: "Rainy"
+                    };
+                default:
+                    return {
+                        temperature: 0,
+                        conditions: "Unknown"
+                    };
+            }
+        }
+    </script>
 
 	</div>
 
