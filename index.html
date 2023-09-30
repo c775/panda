@@ -8,9 +8,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-	<style>
+	<<style>
+        .day-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
         .day {
-            width: 200px;
+            position: relative;
+            width: 100px;
             height: 50px;
             margin: 10px;
             padding: 10px;
@@ -21,6 +28,26 @@
         }
 
         .day:hover {
+            background-color: #f0f0f0;
+        }
+
+        .weather-bubble {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 180px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 1;
+        }
+
+        .show-details-btn {
+            margin-top: 20px;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #ccc;
             background-color: #f0f0f0;
         }
     </style>
@@ -103,11 +130,19 @@
 	      <h2><center>SWTX TV Summit Zone Meeting</center></h2>
 <p><center>SWTX is honored to host the TV Summit Zone Meeting in the beautiful Alamo City, San Antonio, Texas! We embarked on a journey where we trained our mindset with <strong>"In it to Win it"</strong>, strengthened our toolset with <strong>"Level UP!"</strong> Now, we're ready to complete the cycle and apply the skillset, getting <strong>DIALED IN!</strong> Experience unity and a blend of cultures in the heart of San Antonio.</center></p>
 
-<div class="day" onmouseover="displayWeather(1)" onmouseout="hideWeather()">Day 1</div>
-    <div class="day" onmouseover="displayWeather(2)" onmouseout="hideWeather()">Day 2</div>
-    <div class="day" onmouseover="displayWeather(3)" onmouseout="hideWeather()">Day 3</div>
+ <div class="day-container">
+        <div class="day" onmouseover="showDetails(1)" onmouseout="hideDetails(1)">Day 1</div>
+        <div class="day" onmouseover="showDetails(2)" onmouseout="hideDetails(2)">Day 2</div>
+        <div class="day" onmouseover="showDetails(3)" onmouseout="hideDetails(3)">Day 3</div>
+    </div>
 
-    <div id="weather-details" style="display:none; text-align: center;"></div>
+    <div id="details-bubble-1" class="weather-bubble"></div>
+    <div id="details-bubble-2" class="weather-bubble"></div>
+    <div id="details-bubble-3" class="weather-bubble"></div>
+
+    <div class="show-details-btn" onclick="displayDetails()">Show Weather & Dress Code</div>
+
+			
 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <div class="elfsight-app-c0347040-45af-4ba6-967b-55e3dcd81115"></div>
     
@@ -115,22 +150,27 @@
 </div>
 		<p class="countdown" id="cdtimer"></p>
 
-		<script>
-        function displayWeather(day) {
-            // Use a weather API to fetch and display weather information for the selected day
-            // For simplicity, let's assume we have a function getWeather(day) that returns the data
+<script>
+        function showDetails(day) {
             const weatherData = getWeather(day);
-            const weatherDetails = document.getElementById('weather-details');
-            weatherDetails.innerHTML = `<strong>Day ${day}:</strong><br>Temperature: ${weatherData.temperature}°C<br>Conditions: ${weatherData.conditions}`;
-            weatherDetails.style.display = 'block';
+            const dressCodeData = getDressCode(day);
+            const detailsBubble = document.getElementById(`details-bubble-${day}`);
+            detailsBubble.innerHTML = `<strong>Day ${day}:</strong><br>Temperature: ${weatherData.temperature}°C<br>Conditions: ${weatherData.conditions}<br>Dress Code: ${dressCodeData}`;
+            detailsBubble.style.display = 'block';
         }
 
-        function hideWeather() {
-            const weatherDetails = document.getElementById('weather-details');
-            weatherDetails.style.display = 'none';
+        function hideDetails(day) {
+            const detailsBubble = document.getElementById(`details-bubble-${day}`);
+            detailsBubble.style.display = 'none';
         }
 
-        // Mock function for demonstration purposes
+        function displayDetails() {
+            // Implement your logic to display details when the button is clicked
+            // For simplicity, let's just show an alert for demonstration purposes
+            alert("Button clicked! Implement your logic here to display weather & dress code details.");
+        }
+
+        // Mock functions for demonstration purposes
         function getWeather(day) {
             switch (day) {
                 case 1:
@@ -153,6 +193,19 @@
                         temperature: 0,
                         conditions: "Unknown"
                     };
+            }
+        }
+
+        function getDressCode(day) {
+            switch (day) {
+                case 1:
+                    return "Casual";
+                case 2:
+                    return "Business Casual";
+                case 3:
+                    return "Raincoat and Umbrella";
+                default:
+                    return "Unknown";
             }
         }
     </script>
