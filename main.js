@@ -57,3 +57,9 @@ $("#hi").click(function(){
 $("#remove").click(function(){
   $(".layer").removeClass("clicked");
 })
+
+// script.js
+
+
+
+
