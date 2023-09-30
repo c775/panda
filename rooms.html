@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda - ABOUT</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .room {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-container">
+        <nav>
+            <ul class="mobile-nav">
+                <li>
+                    <div class="menu-icon-container">
+                        <div class="menu-icon">
+                            <span class="line-1"></span>
+                            <span class="line-2"></span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="index.html" class="link-logo"></a>
+                </li>
+
+                <li>
+                    <a href="" class="link-bag"></a>
+                </li>
+            </ul>
+
+            <ul class="desktop-nav">
+                <li>
+                    <a href="index.html" class="link-logo"></a>
+                </li>
+                <li>
+                    <a href="Schedule.html">Schedule</a>
+                </li>
+                <li>
+                    <a href="Speakers.html">Speakers</a>
+                </li>
+				 <li>
+                    <a href="rooms.html"><strong>Room List</strong></a>
+                </li>
+                <li>
+                    <a href="About.html"><strong>About San Antonio</strong></a>
+                </li>
+                <li>
+                    <a href="#" class="link-search"></a>
+                </li>
+                <li>
+                    <a href="mian.html" class="link-bag"></a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- End of navigation menu items -->
+
+        <div class="search-container hide">
+            <div class="link-search"></div>
+            <div class="search-bar">
+                <form action="">
+                    <input type="text" placeholder="Search apple.com">
+                </form>
+            </div>
+            <div class="link-close"></div>
+        </div>
+
+		
+		
+
+
+        
+
+    </div>
+		<div class="body-text">
+					<div class="one">
+		  <h1>Room List</h1>
+		</div>
+	
+	</div>
+
+    <div class="container">
+        <input type="text" id="searchInput" placeholder="Search for a roommate...">
+        <div id="roomList">
+            <!-- Roommate information will be dynamically generated here -->
+        </div>
+    </div>
+    <script>
+        // Sample data for 26 rooms with 2 people each
+        const roomData = [
+            { room: 1, person1: "David Wang", person2: "" },
+			{ room: 2, person1: "Vivian Lau", person2: "" },
+			{ room: 3, person1: "Helen Lin", person2: "" },
+			{ room: 4, person1: "Kristin Garling", person2: "" },
+			{ room: 5, person1: "Karyeng Liew", person2: "" },
+			{ room: 6, person1: "Jay Hsu", person2: "" },
+			{ room: 7, person1: "Jennifer Nguyen", person2: "" },
+			{ room: 8, person1: "Michelle Zhuang", person2: "" },
+			{ room: 9, person1: "Jingyi Yang", person2: "" },
+			{ room: 10, person1: "Ru Chen", person2: "" },
+			{ room: 11, person1: "Luis Chaparro", person2: "" },
+			{ room: 12, person1: "Richard Lin", person2: "" },
+			{ room: 13, person1: "Manee Coe", person2: "Grace Seng" },
+			{ room: 14, person1: "Kelly Tseng", person2: "Sauyeng Ng" },
+			{ room: 15, person1: "Nan Lujan", person2: "Jennifer Sui" },
+			{ room: 16, person1: "Yarda Wannasopar", person2: "Yan Wen" },
+			{ room: 17, person1: "Jonathon Diep", person2: "Jay Hong" },
+			{ room: 18, person1: "Justine Ramos", person2: "Kristin Craford" },
+			{ room: 19, person1: "Jonathan Lin", person2: "Illyas Rahimi" },
+			{ room: 20, person1: "Mindy Feng", person2: "Irani Talisma" },
+			{ room: 21, person1: "Adriana martinez", person2: "Maria Esueta" },
+			{ room: 22, person1: "Jia Hsu", person2: "Mark Nguyen" },
+			{ room: 23, person1: "Lourdez	Chocoj", person2: "Flor	Figueroa" },
+			{ room: 24, person1: "Stephanie	Lee", person2: "Watinee	Payad" },
+			{ room: 25, person1: "Mohit	Sharma", person2: "Yujian	Du" },
+			{ room: 26, person1: "Mei Fung", person2: "Pei 	Saunders" },
+			{ room: 27, person1: "Hank Chung", person2: "Tosa	Tatsuo" },
+			{ room: 28, person1: "Leah Kempin", person2: "Kay Sawatdikij" },
+			{ room: 29, person1: "Bryant Jiron", person2: "Adrian Chong" },
+			{ room: 30, person1: "Clara Ji", person2: "Daphnee	Soo" },
+			{ room: 31, person1: "Ling Huang", person2: "" },
+			{ room: 32, person1: "Patara Kanasuta", person2: "Jennisa	Prinvadong" },
+			{ room: 33, person1: "Malinda	Mao", person2: "Fanny Galdamez" },
+			{ room: 34, person1: "Ernie Ruiz", person2: "Kristoffer Dy" },
+			{ room: 35, person1: "Lydia Chen", person2: "Sayping	Midkiff" },
+			{ room: 36, person1: "Sukhee Choi", person2: "Yazmin Sanchez" },
+			{ room: 37, person1: "Fayzuddin Kur", person2: "Minh Tran" },
+			
+			
+            // Add more room data here...
+        ];
+
+        const roomList = document.getElementById("roomList");
+        const searchInput = document.getElementById("searchInput");
+
+        // Function to filter and display the roommates based on search input
+        function displayRoommates() {
+            const searchTerm = searchInput.value.toLowerCase();
+            roomList.innerHTML = '';
+
+            roomData.forEach(roomInfo => {
+                const { room, person1, person2 } = roomInfo;
+                if (person1.toLowerCase().includes(searchTerm) || person2.toLowerCase().includes(searchTerm)) {
+                    const roomDiv = document.createElement("div");
+                    roomDiv.classList.add("room");
+                    roomDiv.innerHTML = `<p>${person1}</p><br><p>${person2}</p>`;
+                    roomList.appendChild(roomDiv);
+                }
+            });
+        }
+
+        // Initial display of roommates
+        displayRoommates();
+
+        // Listen for input changes to update the displayed roommates
+        searchInput.addEventListener("input", displayRoommates);
+    </script>
+	
+    <div class="overlay"></div>
+    
+    <script src="main.js"></script>
+
+</body>
+</html>
