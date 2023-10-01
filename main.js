@@ -35,7 +35,7 @@ menuIconContainer.addEventListener("click", () => {
 
 const searchBar = document.querySelector(".mobile-search-container .search-bar");
 const nav = document.querySelector(".nav-container nav");
-const searchInput = document.querySelector(".mobile-search-container input");
+//const searchInput = document.querySelector(".mobile-search-container input");
 const cancelBtn = document.querySelector(".mobile-search-container .cancel-btn");
 
 searchInput.addEventListener("click", () => {
