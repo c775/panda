@@ -8,47 +8,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-	<<style>
-        .day-container {
+        <style>
+        body {
+            font-family: Arial, sans-serif;
             display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Set the body to cover the full viewport height */
+            margin: 0; /* Remove default margin */
         }
 
-        .day {
-            position: relative;
-            width: 100px;
-            height: 50px;
-            margin: 10px;
-            padding: 10px;
+        .widget-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow widgets to wrap to the next line */
+            justify-content: space-between; /* Space out widgets horizontally */
+            width: 90%; /* Adjust the width as needed */
+        }
+
+        .widget {
             border: 1px solid #ccc;
-            cursor: pointer;
+            padding: 20px;
             text-align: center;
-            transition: background-color 0.3s ease;
+            width: 30%;
         }
 
-        .day:hover {
-            background-color: #f0f0f0;
+        .weather {
+            margin-top: 10px;
         }
 
-        .weather-bubble {
-            display: none;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 180px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            z-index: 1;
-        }
-
-        .show-details-btn {
-            margin-top: 20px;
-            padding: 10px;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            background-color: #f0f0f0;
+        @media (max-width: 600px) {
+            /* Adjust the layout for small screens */
+            .widget {
+                width: 90%; /* Make widgets full width on small screens */
+                margin: 10px auto; /* Center widgets horizontally */
+            }
         }
     </style>
 </head>
@@ -77,7 +70,8 @@
 
             <ul class="desktop-nav">
                 <li>
-                    <a href="index.html" class="link-logo"></a>
+                    <a href="index.html" class="link-logo">
+					</a>
                 </li>
                 <li>
                     <a href="Schedule.html">Schedule</a>
@@ -94,6 +88,9 @@
                 <li>
                     <a href="About.html">About San Antonio</a>
                 </li>
+								<li>
+					<a href="Contact.html">Contact</a>
+				</li>
                 <li>
                     <a href="#" class="link-search"></a>
                 </li>
@@ -113,13 +110,7 @@
                 </form>
             </div>
             <div class="link-close"></div>
-
-
         </div>
-
-
-
-        
 
     </div>
 	<div class="body-text">
@@ -130,85 +121,57 @@
 	      <h2><center>SWTX TV Summit Zone Meeting</center></h2>
 <p><center>SWTX is honored to host the TV Summit Zone Meeting in the beautiful Alamo City, San Antonio, Texas! We embarked on a journey where we trained our mindset with <strong>"In it to Win it"</strong>, strengthened our toolset with <strong>"Level UP!"</strong> Now, we're ready to complete the cycle and apply the skillset, getting <strong>DIALED IN!</strong> Experience unity and a blend of cultures in the heart of San Antonio.</center></p>
 
- <div class="day-container">
-        <div class="day" onmouseover="showDetails(1)" onmouseout="hideDetails(1)">Day 1</div>
-        <div class="day" onmouseover="showDetails(2)" onmouseout="hideDetails(2)">Day 2</div>
-        <div class="day" onmouseover="showDetails(3)" onmouseout="hideDetails(3)">Day 3</div>
     </div>
+    <div class="widget-container">
+        <div class="widget">
+            <h2>Day 1</h2>
+			<br>
+			<p>Store Visits @ 2pm</p>
+			<p>Panda Uniform</p>
+			<br>
+            <p>Weather: Sunny</p>
+            <p>Temperature: 25°C</p>
+            <div class="weather">
+                🌨️Cloudy 90°F
+            </div>
+        </div>
 
-    <div id="details-bubble-1" class="weather-bubble"></div>
-    <div id="details-bubble-2" class="weather-bubble"></div>
-    <div id="details-bubble-3" class="weather-bubble"></div>
+        <div class="widget">
+            <h2>Day 2</h2>
+			<br>
+			<p>Evening Activity @4pm </p>
+			<p><strong>Recomened attire -  jeans, a light sweater, and hiking/trekking shoes or cowboy boots</strong></p>
+			<br>
+            <p>Weather: Cloudy</p>
+            <p>Temperature: 20°C</p>
+            <div class="weather">
+                🌤️Cloudy 90°F
+            </div>
+        </div>
 
-    <div class="show-details-btn" onclick="displayDetails()">Show Weather & Dress Code</div>
-
-			
-<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-c0347040-45af-4ba6-967b-55e3dcd81115"></div>
-    
+        <div class="widget">
+            <h2>Day 3</h2>
+			<br>
+			<p>General session @ 9am</p>
+			<p><strong>Panda Uniform
+</strong></p>
+			<br>
+            <p>Weather: Rainy</p>
+            <p>Temperature: 15°C</p>
+            <div class="weather">
+                ☀️Cloudy 90°F
+            </div>
+        </div>
     </div>
+		
+		
+		
+		
+		
 </div>
 		<p class="countdown" id="cdtimer"></p>
 
-<script>
-        function showDetails(day) {
-            const weatherData = getWeather(day);
-            const dressCodeData = getDressCode(day);
-            const detailsBubble = document.getElementById(`details-bubble-${day}`);
-            detailsBubble.innerHTML = `<strong>Day ${day}:</strong><br>Temperature: ${weatherData.temperature}°C<br>Conditions: ${weatherData.conditions}<br>Dress Code: ${dressCodeData}`;
-            detailsBubble.style.display = 'block';
-        }
 
-        function hideDetails(day) {
-            const detailsBubble = document.getElementById(`details-bubble-${day}`);
-            detailsBubble.style.display = 'none';
-        }
-
-        function displayDetails() {
-            // Implement your logic to display details when the button is clicked
-            // For simplicity, let's just show an alert for demonstration purposes
-            alert("Button clicked! Implement your logic here to display weather & dress code details.");
-        }
-
-        // Mock functions for demonstration purposes
-        function getWeather(day) {
-            switch (day) {
-                case 1:
-                    return {
-                        temperature: 25,
-                        conditions: "Sunny"
-                    };
-                case 2:
-                    return {
-                        temperature: 22,
-                        conditions: "Partly Cloudy"
-                    };
-                case 3:
-                    return {
-                        temperature: 20,
-                        conditions: "Rainy"
-                    };
-                default:
-                    return {
-                        temperature: 0,
-                        conditions: "Unknown"
-                    };
-            }
-        }
-
-        function getDressCode(day) {
-            switch (day) {
-                case 1:
-                    return "Casual";
-                case 2:
-                    return "Business Casual";
-                case 3:
-                    return "Raincoat and Umbrella";
-                default:
-                    return "Unknown";
-            }
-        }
-    </script>
 
 	</div>
 
