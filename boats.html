@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda - ABOUT</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+	<style>
+        .day-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .day {
+            position: relative;
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .day:hover {
+            background-color: #f0f0f0;
+        }
+
+        .weather-bubble {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: auto;
+            right: auto;
+            width: 180px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 1;
+        }
+
+        .show-details-btn {
+            margin-top: 20px;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+        }
+                table {
+                    border-collapse: collapse;
+                    width: 50%;
+                    margin: 20px auto;
+                }
+                th, td {
+                    border: 1px solid black;
+                    padding: 8px;
+                    text-align: center;
+                }
+                th {
+                    background-color: #f2f2f2;
+                }
+            </style>
+
+</head>
+<body>
+
+    <div class="nav-container">
+        <nav>
+            <ul class="mobile-nav">
+                <li>
+                    <div class="menu-icon-container">
+                        <div class="menu-icon">
+                            <span class="line-1"></span>
+                            <span class="line-2"></span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="index.html" class="link-logo"></a>
+                </li>
+
+                <li>
+                    <a href="" class="link-bag"></a>
+                </li>
+            </ul>
+
+            <ul class="desktop-nav">
+                <li>
+                    <a href="index.html" class="link-logo"></a>
+                </li>
+                <li>
+                    <a href="Schedule.html">Schedule</a>
+                </li>
+                <li>
+                    <a href="Speakers.html">Speakers</a>
+                </li>
+				 <li>
+                    <a href="rooms.html"><strong>Room List</strong></a>
+                </li>
+				<li>
+                    <a href="PreWork.html">Pre-Work</a>
+                </li>
+                <li>
+                    <a href="About.html">About San Antonio</a>
+                </li>
+				<li>
+                    <a href="transportation.html">Transportation</a>
+                </li>
+				<li>
+					<a href="Contact.html">Contact</a>
+				</li>
+				 <li>
+                    <a href="mian.html" class="link-bag"></a>
+                </li> 
+
+				<li>
+                    <a href="#" class="link-search"></a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- End of navigation menu items -->
+
+        <div class="search-container hide">
+            <div class="link-search"></div>
+            <div class="search-bar">
+                <form action="">
+                    <input type="text" placeholder="Search apple.com">
+                </form>
+            </div>
+            <div class="link-close"></div>
+        </div>
+
+		
+		
+
+
+        
+
+    </div>
+		<div class="body-text">
+					<div class="one">
+		  <h1>Riverwalk Boat Companions</h1>
+		</div>
+                    <!--
+                    <h2>Table 1: Boat 1</h2>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                        <tr>
+                            <td>Binh Giang</td>
+                        </tr>
+                        <tr>
+                            <td>Manee Coe</td>
+                        </tr>
+                        <tr>
+                            <td>Vivian Lau</td>
+                        </tr>
+                        <tr>
+                            <td>Jingyi Yang</td>
+                        </tr>
+                        <tr>
+                            <td>Ling Huang</td>
+                        </tr>
+                        <tr>
+                            <td>Clara Ji</td>
+                        </tr>
+                        <tr>
+                            <td>Ilyas Rahimi</td>
+                        </tr>
+                        <tr>
+                            <td>Yujian Du</td>
+                        </tr>
+                        <tr>
+                            <td>Pei Saunders</td>
+                        </tr>
+                        <tr>
+                            <td>Patara Kanatsuta</td>
+                        </tr>
+                        <tr>
+                            <td>Daphne KarYee</td>
+                        </tr>
+                        <tr>
+                            <td>Jennisa Prindavong</td>
+                        </tr>
+                        <tr>
+                            <td>Roberto Ornelas</td>
+                        </tr>
+                        <tr>
+                            <td>Kaytlynne Clanan</td>
+                        </tr>
+                        <tr>
+                            <td>Ru Chen</td>
+                        </tr>
+                        <tr>
+                            <td>Fanny Galdamez</td>
+                        </tr>
+                        <tr>
+                            <td>Ernie Ruiz</td>
+                        </tr>
+                        <tr>
+                            <td>Christopher Dy</td>
+                        </tr>
+                        <tr>
+                            <td>Lydia Chen</td>
+                        </tr>
+                        <tr>
+                            <td>Saypin Midkiff</td>
+                        </tr>
+                        <tr>
+                            <td>Sukhee Choy</td>
+                        </tr>
+                        <tr>
+                            <td>Yazmin Sanchez</td>
+                        </tr>
+                        <tr>
+                            <td>Melinda Mao</td>
+                        </tr>
+                    </table>
+
+                    
+                    <h2>Table 2: Boat 2</h2>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                        <tr>
+                            <td>Kelly Tseng</td>
+                        </tr>
+                        <tr>
+                            <td>Sauyeng Ng</td>
+                        </tr>
+                        <tr>
+                            <td>Nan Lujan</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Sui</td>
+                        </tr>
+                        <tr>
+                            <td>Yarda Wannasopar</td>
+                        </tr>
+                        <tr>
+                            <td>Luis Chaparro</td>
+                        </tr>
+                        <tr>
+                            <td>Fayzuddin Kurbonov</td>
+                        </tr>
+                        <tr>
+                            <td>Mei Fung Chai</td>
+                        </tr>
+                        <tr>
+                            <td>Adrian Chong</td>
+                        </tr>
+                        <tr>
+                            <td>Minh Tran</td>
+                        </tr>
+                        <tr>
+                            <td>Mohit Sharma</td>
+                        </tr>
+                        <tr>
+                            <td>Jay Hsu</td>
+                        </tr>
+                        <tr>
+                            <td>Jonathon Lin</td>
+                        </tr>
+                        <tr>
+                            <td>Leah Kempin</td>
+                        </tr>
+                        <tr>
+                            <td>Maria Escueta</td>
+                        </tr>
+                        <tr>
+                            <td>Adriana MartinezSanchez</td>
+                        </tr>
+                        <tr>
+                            <td>Irani Taslima</td>
+                        </tr>
+                        <tr>
+                            <td>Mindy Feng</td>
+                        </tr>
+                        <tr>
+                            <td>Marcos Garza</td>
+                        </tr>
+                        <tr>
+                            <td>Taelor Wilson</td>
+                        </tr>
+                        <tr>
+                            <td>Justine Ramos</td>
+                        </tr>
+                        <tr>
+                            <td>Jonathan Diep</td>
+                        </tr>
+                        <tr>
+                            <td>Kristine Crawford</td>
+                        </tr>
+                        <tr>
+                            <td>Yan Wen</td>
+                        </tr>
+                    </table>
+
+                    
+                    <h2>Table 3: Boat 3</h2>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                        <tr>
+                            <td>Richard Lin</td>
+                        </tr>
+                        <tr>
+                            <td>Grace Seng</td>
+                        </tr>
+                        <tr>
+                            <td>Jay Hong</td>
+                        </tr>
+                        <tr>
+                            <td>Karyeng Liew</td>
+                        </tr>
+                        <tr>
+                            <td>Helen Lin</td>
+                        </tr>
+                        <tr>
+                            <td>Kristin Garling</td>
+                        </tr>
+                        <tr>
+                            <td>David Wang</td>
+                        </tr>
+                        <tr>
+                            <td>America Chong</td>
+                        </tr>
+                        <tr>
+                            <td>Anthony Jara</td>
+                        </tr>
+                        <tr>
+                            <td>Ramiro Mendoza</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Nguyen</td>
+                        </tr>
+                        <tr>
+                            <td>Jia Hsu</td>
+                        </tr>
+                        <tr>
+                            <td>Mark Nguyen</td>
+                        </tr>
+                        <tr>
+                            <td>Lourdes Choco</td>
+                        </tr>
+                        <tr>
+                            <td>Flor Figueroa</td>
+                        </tr>
+                        <tr>
+                            <td>Stephanie Lee</td>
+                        </tr>
+                        <tr>
+                            <td>Watinee Payad</td>
+                        </tr>
+                        <tr>
+                            <td>Hank Chung</td>
+                        </tr>
+                        <tr>
+                            <td>Tatsuo Tosa</td>
+                        </tr>
+                        <tr>
+                            <td>Kay Sawatdikij</td>
+                        </tr>
+                        <tr>
+                            <td>Bryant Jiron</td>
+                        </tr>
+                        <tr>
+                            <td>Michelle Zhuang</td>
+                        </tr>
+                        <tr>
+                            <td>Matthiu Sumida</td>
+                        </tr>
+                    </table>
+-->
+	
+	</div>
+
+    <div class="container">
+        <input type="text" id="searchInput" placeholder="Search for a roommate...">
+        <div id="roomList">
+            <!-- Roommate information will be dynamically generated here -->
+        </div>
+    </div>
+    <script>
+        // Sample data for 26 rooms with 2 people each
+        const roomData = [
+            { room: 1, person1: "David Wang", person2: "" , person3: "" , person4: "" , person5: "" , person6: "" , person7: "" , person8: "" , person9: "" , person10: "" , person11: "" , person12: "" , person13: "" , person14: "" , person15: "" , person16: "" , person17: "" , person18: "" , person19: "" , person20: "" , person21: "" , person22: "" , person23: "" , person24: "" },
+			{ room: 2, person1: "not David Wang", person2: "" , person3: "" , person4: "" , person5: "" , person6: "" , person7: "" , person8: "" , person9: "" , person10: "" , person11: "" , person12: "" , person13: "" , person14: "" , person15: "" , person16: "" , person17: "" , person18: "" , person19: "" , person20: "" , person21: "" , person22: "" , person23: "" , person24: "" },
+			{ room: 3, person1: "maybe David Wang", person2: "" , person3: "" , person4: "" , person5: "" , person6: "" , person7: "" , person8: "" , person9: "" , person10: "" , person11: "" , person12: "" , person13: "" , person14: "" , person15: "" , person16: "" , person17: "" , person18: "" , person19: "" , person20: "" , person21: "" , person22: "" , person23: "" , person24: "" },
+			
+            // Add more room data here...
+        ];
+
+        const roomList = document.getElementById("roomList");
+        const searchInput = document.getElementById("searchInput");//disables the nav bar when enabled
+
+        // Function to filter and display the roommates based on search input
+        function displayRoommates() {
+            const searchTerm = searchInput.value.toLowerCase();
+            roomList.innerHTML = '';
+
+            roomData.forEach(roomInfo => {
+                const {person1, person2, person3, person4, person5, person6, person7, person8, person9, person10, person11, person12, person13, person14, person15, person16, person17, person19, person20, person21, person22, person23, person24} = roomInfo;
+                if (person1.toLowerCase().includes(searchTerm) || person2.toLowerCase().includes(searchTerm)) || person3.toLowerCase().includes(searchTerm)) || person4.toLowerCase().includes(searchTerm)) || person5.toLowerCase().includes(searchTerm)) || person6.toLowerCase().includes(searchTerm)) || person7.toLowerCase().includes(searchTerm)) || person8.toLowerCase().includes(searchTerm)) || person9.toLowerCase().includes(searchTerm)) || person10.toLowerCase().includes(searchTerm)) || person11.toLowerCase().includes(searchTerm)) || person12.toLowerCase().includes(searchTerm)) || person13.toLowerCase().includes(searchTerm)) || person14.toLowerCase().includes(searchTerm)) || person15.toLowerCase().includes(searchTerm)) || person16.toLowerCase().includes(searchTerm)) || person17.toLowerCase().includes(searchTerm)) || person18.toLowerCase().includes(searchTerm)) || person19.toLowerCase().includes(searchTerm)) || person20.toLowerCase().includes(searchTerm)) || person21.toLowerCase().includes(searchTerm)) || person22.toLowerCase().includes(searchTerm)) || person23.toLowerCase().includes(searchTerm)) || person24.toLowerCase().includes(searchTerm)) {
+                    const roomDiv = document.createElement("div");
+                    roomDiv.classList.add("room");
+                    roomDiv.innerHTML = `<p>${person1}</p><br><p>${person2}</p><br><p>${person3}</p><br><p>${person4}</p><br><p>${person5}</p><br><p>${person6}</p><br><p>${person7}</p><br><p>${person8}</p><br><p>${person9}</p><br><p>${person10}</p><br><p>${person11}</p><br><p>${person12}</p><br><p>${person13}</p><br><p>${person14}</p><br><p>${person15}</p><br><p>${person16}</p><br><p>${person17}</p><br><p>${person18}</p><br><p>${person19}</p><br><p>${person20}</p><br><p>${person21}</p><br><p>${person22}</p><br><p>${person23}</p><br><p>${person24}</p>`;
+                    roomList.appendChild(roomDiv);
+                }
+            });
+        }
+
+        // Initial display of roommates
+        displayRoommates();
+
+        // Listen for input changes to update the displayed roommates
+        searchInput.addEventListener("input", displayRoommates);
+    </script>
+	
+    <div class="overlay"></div>
+    
+    <script src="main.js"></script>
+
+</body>
+</html>
