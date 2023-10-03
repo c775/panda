@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda - Vans</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .boat {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .boat-title {
+            background-color: rgba(10, 10, 10, 0.233); /* Change to your desired background color */
+            color: #111; /* Change to your desired text color */
+            font-size: 24px; /* Change to your desired font size */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-weight: bold; /* Optional: Make the title bold */
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-container">
+        <nav>
+            <ul class="mobile-nav">
+                <li>
+                    <div class="menu-icon-container">
+                        <div class="menu-icon">
+                            <span class="line-1"></span>
+                            <span class="line-2"></span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="index.html" class="link-logo"></a>
+                </li>
+
+                <li>
+                    <a href="" class="link-bag"></a>
+                </li>
+            </ul>
+
+            <ul class="desktop-nav">
+                <li>
+                    <a href="index.html" class="link-logo"></a>
+                </li>
+                <li>
+                    <a href="van.html"><strong>Van Seating</strong></a>
+                </li>
+                
+                <li>
+                    <a href="boat.html">Riverwalk Boat Tour</a>
+                </li>
+                <li>
+                    <a href="Schedule.html">Schedule</a>
+                </li>
+                <li>
+                    <a href="Speakers.html">Speakers</a>
+                </li>
+				 <li>
+                    <a href="rooms.html"><strong>Room List</strong></a>
+                </li>
+				<li>
+                    <a href="PreWork.html">Pre-Work</a>
+                </li>
+                <li>
+                    <a href="About.html">About San Antonio</a>
+                </li>
+				<li>
+                    <a href="transportation.html">Transportation</a>
+                </li>
+				<li>
+					<a href="Contact.html">Contact</a>
+				</li>
+				 <li>
+                    <a href="mian.html" class="link-bag"></a>
+                </li> 
+
+				<li>
+                    <a href="#" class="link-search"></a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- End of navigation menu items -->
+
+        <div class="search-container hide">
+            <div class="link-search"></div>
+            <div class="search-bar">
+                <form action="">
+                    <input type="text" placeholder="Search apple.com">
+                </form>
+            </div>
+            <div class="link-close"></div>
+        </div>
+
+		
+		
+
+
+        
+
+    </div>
+		<div class="body-text">
+					<div class="one">
+		  <h1>Van List</h1>
+		</div>
+	
+	</div>
+
+    <div class="container">
+        <input type="text" id="searchInput" placeholder="Search for a your van by your name...">
+        <div id="boatList">
+            <!-- boatmate information will be dynamically generated here -->
+        </div>
+    </div>
+    <script>
+        // Sample data for 3 boats with 24 people each
+        const boatData = [
+            {
+                boat: 1,
+                title: "Orange Van - Driver luis",
+                bgColor: "#FFEBCD", // Initial background color
+                persons: [
+                    "Manee coe", "Helen Lin","Karyeng Liew","Jingyi Yang","Jay Hsu","Jeniffer Nguyen","Ru Chen","Michelle Zhuang","Ru Chen","Michelle Zhuang","Richard Lin","Bihn Giang"
+                ]
+            },
+                          {
+                              boat: 2,
+                              title: "Yellow Van - Driver America",
+                              bgColor: "#FFFCCD", // Initial background color
+                              persons: [
+                                  "David Wang","Vivian Lau","Kristin Garling"
+                              ]
+                          },
+                          {
+                              boat: 3,
+                              title: "Black Van - Driver Anthony",
+                              bgColor: "#CCCCCC", // Initial background color
+                              persons: [
+                                  "Pei Saunders","yarda Wannasopar","Fanny Galdamez","Jennisa Prindavong","Kay Sawatdikij","Malinda Mao","Minh Tran","Ilyas Rahimi","Leah Kempin"
+                              ]
+                          },{
+                          boat: 4,
+                          title: "Purple Van - Driver Taelor",
+                          bgColor: "#F3CDFF", // Initial background color
+                          persons: [
+                              "Adriana MartinezSanchez","Fayzuddin Kurbonov","Jonathan Diep","Kris Dy","Lourdez Chocoj","Nan Lujan","Sauyeng Ng","Yujian Du"
+                          ]
+                      },
+                      {
+                          boat: 5,
+                          title: "Green Van - Driver Marcos",
+                          bgColor: "#D9FFD6", // Initial background color
+                          persons: [
+                              "Jonathan Lin","Patara Kanatsuta","Daphne KarYee","Flor Figueroa","Tatsuo Tosa","Ernie Ruiz","Kristin Crawford","Stephanie Lee"
+                          ]
+                      },{
+                          boat: 6,
+                          title: "Pink Van - Driver Katie",
+                          bgColor: "#FFD6FB", // Initial background color
+                          persons: [
+                              "Watinee Payad","Maria Escueta","Mohit Sharma","Clara Ji","Jay Hong","Mei fung Chia","Bryant Jiron","Yan Wen"
+                          ]
+                      },
+                      {
+                          boat: 7,
+                          title: "Blue Van - Driver Raniro",
+                          bgColor: "#D6DCFF", // Initial background color
+                          persons: [
+                              "Adrian Chonh","Lydia Chen","Irani Taslima","Jia Horng Hsu","Justine Ramos","Mark Nguyen","Saypin Midkiff","Sukhee Choi"
+                          ]
+                      },{
+                          boat: 8,
+                          title: "Red Van - Driver Robert",
+                          bgColor: "#FFD6D6", // Initial background color
+                          persons: [
+                              "Matthiu Sumida", "Kelly Tseng","Jenifer Sui","Linh Huang","Hank Chug","Grace Seng","Mindy Feng","Yazmin SanchezGonzalez"
+                          ]
+                      }
+
+        ];
+
+        const boatList = document.getElementById("boatList");
+        const searchInput = document.getElementById("searchInput");
+
+        // Function to filter and display the boatmates based on search input
+        function displayBoatmates() {
+            const searchTerm = searchInput.value.toLowerCase();
+            boatList.innerHTML = '';
+
+            boatData.forEach(boatInfo => {
+                const { boat, title, bgColor, persons } = boatInfo;
+                const filteredPersons = persons.filter(person => person.toLowerCase().includes(searchTerm));
+                
+                if (filteredPersons.length > 0) {
+                    const boatDiv = document.createElement("div");
+                    boatDiv.classList.add("boat");
+                    boatDiv.style.backgroundColor = bgColor; // Set the background color
+
+                    const titleDiv = document.createElement("div");
+                    titleDiv.classList.add("boat-title");
+                    titleDiv.textContent = title;
+                    boatDiv.appendChild(titleDiv);
+
+                    const personsList = filteredPersons.map(person => `${person}`).join("   ,   ");
+                    boatDiv.innerHTML += `<p>${personsList}</p>`;
+                    boatList.appendChild(boatDiv);
+                }
+            });
+        }
+
+        // Initial display of boatmates
+        displayBoatmates();
+
+        // Listen for input changes to update the displayed boatmates
+        searchInput.addEventListener("input", displayBoatmates);
+    </script>
+
+
+
+
+    <div class="overlay"></div>
+    
+    <script src="main.js"></script>
+
+</body>
+</html>
